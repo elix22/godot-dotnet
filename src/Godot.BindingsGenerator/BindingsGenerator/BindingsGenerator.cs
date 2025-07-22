@@ -31,6 +31,9 @@ internal static partial class BindingsGenerator
 
     private static void GenerateCore(GodotApi api, string outputDirectoryPath, BindingsGeneratorOptions options, BindingsData data, ILogger logger)
     {
+        _ = api;
+        _ = options;
+
         foreach (var generationData in data.Types)
         {
             var (type, path) = generationData;

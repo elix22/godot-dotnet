@@ -893,6 +893,8 @@ internal sealed class EngineClassesBindingsDataCollector : BindingsDataCollector
 
     private static bool ShouldGenerateMethod(TypeInfo type, GodotClassInfo engineClass, GodotMethodInfo engineMethod)
     {
+        _ = type;
+
         if (engineClass.Name == "Object")
         {
             if (engineMethod.Name == "to_string")
@@ -922,6 +924,8 @@ internal sealed class EngineClassesBindingsDataCollector : BindingsDataCollector
 
     private static bool ShouldGenerateProperty(TypeInfo type, GodotClassInfo engineClass, GodotPropertyInfo engineProperty)
     {
+        _ = type;
+
         if (engineClass.Name == "GLTFAccessor")
         {
             if (engineProperty.Name == "type")

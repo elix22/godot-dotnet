@@ -6,7 +6,7 @@ using Godot.BindingsGenerator.Logging;
 
 namespace Godot.BindingsGenerator;
 
-partial class BindingsData
+internal partial class BindingsData
 {
     /// <summary>
     /// Context provided to <see cref="BindingsDataCollector"/> instances to access

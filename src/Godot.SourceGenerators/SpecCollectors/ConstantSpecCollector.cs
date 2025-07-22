@@ -63,6 +63,9 @@ internal static class ConstantSpecCollector
 
     private static GodotConstantSpec CollectCore(Compilation compilation, string symbolName, string? enumSymbolName, string? enumNameOverride, bool isFlagsEnum, AttributeData? attribute, CancellationToken cancellationToken = default)
     {
+        _ = compilation;
+        _ = cancellationToken;
+
         string? nameOverride = null;
 
         if (attribute is not null)

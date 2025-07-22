@@ -423,6 +423,8 @@ internal static class Marshalling
 
     private static bool TryGetDictionaryLikeKeyValueTypes(Compilation compilation, ITypeSymbol dictionaryLikeTypeSymbol, [NotNullWhen(true)] out ITypeSymbol? keyTypeSymbol, [NotNullWhen(true)] out ITypeSymbol? valueTypeSymbol)
     {
+        _ = compilation;
+
         keyTypeSymbol = null;
         valueTypeSymbol = null;
 

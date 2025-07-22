@@ -5,15 +5,14 @@
 
 using System.ComponentModel;
 
-namespace System.Collections.Generic
+namespace System.Collections.Generic;
+
+internal static class KeyValuePairExtensions
 {
-    internal static class KeyValuePairExtensions
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    public static void Deconstruct<TKey, TValue>(this KeyValuePair<TKey, TValue> kvp, out TKey key, out TValue value)
     {
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        public static void Deconstruct<TKey, TValue>(this KeyValuePair<TKey, TValue> kvp, out TKey key, out TValue value)
-        {
-            key = kvp.Key;
-            value = kvp.Value;
-        }
+        key = kvp.Key;
+        value = kvp.Value;
     }
 }

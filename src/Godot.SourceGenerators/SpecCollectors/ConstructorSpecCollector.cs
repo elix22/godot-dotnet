@@ -7,6 +7,9 @@ internal static class ConstructorSpecCollector
 {
     public static GodotConstructorSpec? Collect(Compilation compilation, IMethodSymbol methodSymbol, CancellationToken cancellationToken = default)
     {
+        _ = compilation;
+        _ = cancellationToken;
+
         if (!methodSymbol.TryGetAttribute(KnownTypeNames.BindConstructorAttribute, out _))
         {
             // Method must have the attribute to be registered as a constructor.

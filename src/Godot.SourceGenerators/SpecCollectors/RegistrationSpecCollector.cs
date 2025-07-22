@@ -9,6 +9,9 @@ internal static class RegistrationSpecCollector
 {
     public static GodotRegistrationSpec? Collect(Compilation compilation, INamedTypeSymbol typeSymbol, CancellationToken cancellationToken = default)
     {
+        _ = compilation;
+        _ = cancellationToken;
+
         if (!typeSymbol.TryGetAttribute(KnownTypeNames.GodotClassAttribute, out var attribute))
         {
             // Classes must have the attribute to be registered.

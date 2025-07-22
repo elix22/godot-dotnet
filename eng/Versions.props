@@ -21,7 +21,7 @@
     -->
     <MicrosoftCodeAnalysisVersion_LatestVS>4.8.0</MicrosoftCodeAnalysisVersion_LatestVS>
     <MicrosoftCodeAnalysisCSharpVersion>$(MicrosoftCodeAnalysisVersion_LatestVS)</MicrosoftCodeAnalysisCSharpVersion>
-    <MicrosoftCodeAnalysisTestingVersion>1.1.2-beta1.24169.1</MicrosoftCodeAnalysisTestingVersion>
+    <MicrosoftCodeAnalysisTestingVersion>1.1.2</MicrosoftCodeAnalysisTestingVersion>
     <MicrosoftCodeAnalysisCSharpAnalyzerTestingVersion>$(MicrosoftCodeAnalysisTestingVersion)</MicrosoftCodeAnalysisCSharpAnalyzerTestingVersion>
     <MicrosoftCodeAnalysisCSharpCodeFixTestingVersion>$(MicrosoftCodeAnalysisTestingVersion)</MicrosoftCodeAnalysisCSharpCodeFixTestingVersion>
     <MicrosoftCodeAnalysisCSharpSourceGeneratorsTestingVersion>$(MicrosoftCodeAnalysisTestingVersion)</MicrosoftCodeAnalysisCSharpSourceGeneratorsTestingVersion>

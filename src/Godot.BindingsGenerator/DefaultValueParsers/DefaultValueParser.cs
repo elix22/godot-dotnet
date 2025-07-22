@@ -18,6 +18,7 @@ internal abstract partial class DefaultValueParser
     /// and return the equivalent C# expression as a string.
     /// </summary>
     /// <param name="engineDefaultValueExpression">Default value expression.</param>
+    /// <param name="typeDB">Type database for resolving types.</param>
     /// <returns>Default value expression for C#.</returns>
     public string Parse(string engineDefaultValueExpression, TypeDB typeDB)
     {

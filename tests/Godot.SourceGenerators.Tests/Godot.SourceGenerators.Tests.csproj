@@ -14,6 +14,9 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.CodeFix.Testing" Version="$(MicrosoftCodeAnalysisCSharpCodeFixTestingVersion)" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Analyzer.Testing" Version="$(MicrosoftCodeAnalysisCSharpAnalyzerTestingVersion)" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing" Version="$(MicrosoftCodeAnalysisCSharpSourceGeneratorsTestingVersion)" />
+    
+    <!-- Override vulnerable package with newer version -->
+    <PackageReference Include="System.Formats.Asn1" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>

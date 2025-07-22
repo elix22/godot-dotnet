@@ -38,7 +38,7 @@ public static partial class GodotBridge
     private static unsafe GetProcAddressFunction _getProcAddress;
     private static unsafe void* _libraryPtr;
 
-    private static GDExtensionGodotVersion _godotVersion;
+    private static GDExtensionGodotVersion2 _godotVersion;
 
     private static GDExtensionInterface _gdextensionInterface;
 
@@ -66,9 +66,9 @@ public static partial class GodotBridge
         InitializeGDExtensionInterface();
 
         // Load the Godot version.
-        fixed (GDExtensionGodotVersion* godotVersion = &_godotVersion)
+        fixed (GDExtensionGodotVersion2* godotVersion = &_godotVersion)
         {
-            _gdextensionInterface.get_godot_version(godotVersion);
+            _gdextensionInterface.get_godot_version2(godotVersion);
         }
 
         *initialization = new GDExtensionInitialization()

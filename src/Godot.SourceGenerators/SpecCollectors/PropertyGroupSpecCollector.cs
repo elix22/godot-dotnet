@@ -30,6 +30,11 @@ internal static class PropertyGroupSpecCollector
 
     private static GodotPropertyGroupSpec CollectCore(Compilation compilation, string symbolName, ITypeSymbol typeSymbol, AttributeData attribute, CancellationToken cancellationToken = default)
     {
+        _ = compilation;
+        _ = symbolName;
+        _ = typeSymbol;
+        _ = cancellationToken;
+
         string? name;
         string? prefix = null;
 
