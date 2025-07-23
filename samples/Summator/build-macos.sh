@@ -1,0 +1,1 @@
+dotnet publish Extension -r osx-arm64  -o Game/lib/macos

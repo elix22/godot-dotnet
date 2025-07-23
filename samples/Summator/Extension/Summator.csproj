@@ -1,17 +1,54 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Library</OutputType>
     <TargetFramework>net9.0</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
     <PublishAot>true</PublishAot>
+    <PublishAotUsingRuntimePack>true</PublishAotUsingRuntimePack>
+    <TrimMode>partial</TrimMode>
+    <TrimmerRemoveSymbols>false</TrimmerRemoveSymbols>
+    <IsAndroid>$(RuntimeIdentifier.ToLower().StartsWith('linux-bionic'))</IsAndroid>
+    <IsiOS>$(RuntimeIdentifier.ToLower().StartsWith('ios-'))</IsiOS>
   </PropertyGroup>
+
+
+  <Import Project="BionicNativeAot.targets" Condition="'$(IsAndroid)' == 'true'"/>
+
+
+  <PropertyGroup Condition="'$(IsAndroid)' == 'true'">
+    <LibraryName>libSummator</LibraryName>
+    <AssemblyName>$(LibraryName)</AssemblyName>
+    <TargetName>$(LibraryName)</TargetName>
+    <NativeOutputName>$(LibraryName)</NativeOutputName>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <NativeLib>Shared</NativeLib>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(IsAndroid)' == 'true'">
+    <LinkerArg Include="-Wl,-soname,$(LibraryName).so,--undefined-version" />
+  </ItemGroup>
 
   <PropertyGroup>
     <ExcludeFromProductBuild>true</ExcludeFromProductBuild>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(IsAndroid)' != 'true' AND '$(IsiOS)' != 'true'">
     <ProjectReference Include="$(RepoRoot)src\Godot.Bindings\Godot.Bindings.csproj" />
     <ProjectReference Include="$(RepoRoot)src\Godot.SourceGenerators\Godot.SourceGenerators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
+
+    <ItemGroup Condition="'$(IsAndroid)' == 'true' OR '$(IsiOS)' == 'true'">
+      <Reference Include="Godot.Bindings.dll">
+        <HintPath>References\Godot.Bindings.dll</HintPath>
+      </Reference>
+      <Reference Include="Godot.SourceGenerators.dll">
+        <HintPath>References\Godot.SourceGenerators.dll</HintPath>
+      </Reference>
+     </ItemGroup>
 
 </Project>

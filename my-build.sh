@@ -22,6 +22,16 @@
 # dotnet publish samples/Summator/Extension -c Release -r osx-x64 -o samples/Summator/Game/lib/osx-x64 --self-contained true
 
 # ============================================================================
+# ANDROID NATIVE AOT BUILDS
+# ============================================================================
+
+# Android ARM64 (modern devices)
+# dotnet publish samples/Summator/Extension -c Release -r linux-bionic-arm64 -o samples/Summator/Game/lib/android/arm64 --self-contained true
+
+# Android ARMv7a (older devices - 32-bit ARM)
+# dotnet publish samples/Summator/Extension -c Release -r linux-bionic-arm -o samples/Summator/Game/lib/android/armv7 --self-contained true
+
+# ============================================================================
 # iOS DEPLOYMENT OPTIONS (.NET 9 limitations)
 # ============================================================================
 
